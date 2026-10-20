@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#eef6ff" />
+  <meta name="description" content="面向集团、园区与物业管理的智慧园区角色门户演示。" />
+  <title>智慧园区管理平台 · 角色门户</title>
+  <link rel="icon" href="/park-mark.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/style.css" />
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="智慧园区管理平台首页">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span class="brand-name">智慧园区管理平台</span>
+    </a>
+    <nav class="system-nav" aria-label="子系统导航">
+      <button class="nav-item active" data-system="门户">门户</button>
+      <button class="nav-item" data-system="智慧办公">智慧办公 <span class="chevron">⌄</span></button>
+      <button class="nav-item" data-system="数字大屏">数字大屏 <span class="chevron">⌄</span></button>
+      <button class="nav-item" data-system="智慧物联">智慧物联 <span class="chevron">⌄</span></button>
+      <button class="nav-item" data-system="智慧资管">智慧资管 <span class="chevron">⌄</span></button>
+      <button class="nav-item" data-system="智慧物业">智慧物业 <span class="chevron">⌄</span></button>
+      <button class="nav-item" data-system="智慧运营">智慧运营 <span class="chevron">⌄</span></button>
+      <button class="nav-item" data-system="智慧AI">智慧AI <span class="chevron">⌄</span></button>
+      <button class="nav-item" data-system="智慧安全">智慧安全 <span class="chevron">⌄</span></button>
+      <button class="nav-item" data-system="更多">更多 <span class="chevron">⌄</span></button>
+    </nav>
+    <div class="top-actions">
+      <button class="icon-button" id="search-button" aria-label="搜索" title="搜索">⌕</button>
+      <button class="icon-button notification-button" id="notification-button" aria-label="通知" title="通知">
+        <span aria-hidden="true">♧</span><b class="notification-count">7</b>
+      </button>
+      <button class="icon-button help-button" id="help-button" aria-label="帮助" title="帮助">?</button>
+      <div class="role-menu-wrap">
+        <button class="role-menu-trigger" id="role-menu-trigger" type="button" aria-label="当前门户角色：集团管理方，点击切换" aria-haspopup="menu" aria-expanded="false" aria-controls="role-menu-popover">
+          <span class="user-avatar" aria-hidden="true">林</span><span class="role-menu-copy"><small>门户角色</small><b class="role-menu-name" id="role-menu-name">集团管理方</b></span><span class="role-menu-short" id="role-menu-short">集团</span><span class="role-menu-caret" aria-hidden="true">⌄</span>
+        </button>
+        <div class="role-menu-popover" id="role-menu-popover" role="menu" aria-label="切换门户角色" hidden>
+          <div class="role-menu-heading"><strong>切换门户角色</strong><small>首页内容将随角色调整</small></div>
+          <button class="role-option selected" data-role="group" type="button" role="menuitemradio" aria-checked="true"><span class="role-icon">集</span><span><b>集团管理方</b><small>经营 · 资产 · 督办</small></span><span class="role-check">✓</span></button>
+          <button class="role-option" data-role="park" type="button" role="menuitemradio" aria-checked="false"><span class="role-icon park">园</span><span><b>园区管理方</b><small>运营 · 企业 · 协同</small></span><span class="role-check">✓</span></button>
+          <button class="role-option" data-role="property" type="button" role="menuitemradio" aria-checked="false"><span class="role-icon property">物</span><span><b>物业管理方</b><small>工单 · 设备 · 班组</small></span><span class="role-check">✓</span></button>
+        </div>
+      </div>
+      <div class="notification-popover" id="notification-popover" hidden>
+        <div class="popover-heading"><strong>消息通知</strong><span>7 条未读</span></div>
+        <div class="popover-item"><span class="notice-dot danger"></span><div><b>安全风险提醒</b><small>研发楼消防通道整改待复核 · 10:26</small></div></div>
+        <div class="popover-item"><span class="notice-dot blue"></span><div><b>流程审批提醒</b><small>您有 3 项流程待处理 · 09:48</small></div></div>
+        <div class="popover-item"><span class="notice-dot green"></span><div><b>运营简报已生成</b><small>园区本周运营周报已发布 · 昨天</small></div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-layout" id="home">
+    <aside class="left-rail">
+      <section class="profile-card">
+        <div class="profile-visual">
+          <div class="campus-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="profile-copy"><small>周二 · 10月20日</small><h2 id="profile-title">集团管理方</h2><p id="profile-org">集团全域 · 运营驾驶舱</p></div>
+        </div>
+        <div class="profile-meta"><span class="online-dot"></span><span>系统运行正常</span><span class="meta-separator">·</span><span>数据更新于 10:28</span></div>
+      </section>
+
+      <section class="rail-section calendar-section">
+        <div class="section-heading"><span class="section-mark"></span><h3>工作日历</h3><button class="text-button" id="calendar-more">查看日程 <span>›</span></button></div>
+        <div class="calendar-top"><strong>2026年10月</strong><div class="calendar-arrows"><button aria-label="上个月" id="month-prev">‹</button><button aria-label="下个月" id="month-next">›</button></div></div>
+        <div class="calendar-grid" id="calendar-grid" aria-label="2026年10月日历"></div>
+        <div class="calendar-event"><span class="event-line"></span><div><b id="calendar-event-title">集团运营分析会</b><small>14:30 · 线上会议</small></div></div>
+      </section>
+
+      <section class="rail-section reminder-section">
+        <div class="section-heading"><span class="section-mark"></span><h3>今日提醒</h3><span class="reminder-count">3</span></div>
+        <div class="reminder-list" id="reminder-list"></div>
+      </section>
+
+      <div class="rail-footer"><span class="shield-icon">◆</span><span>国企园区数字化运营平台</span><span class="version">V3.2</span></div>
+    </aside>
+
+    <section class="workspace" aria-live="polite">
+      <div class="workspace-topline">
+        <div class="breadcrumb"><span>工作台</span><span class="crumb-slash">/</span><b id="breadcrumb-role">集团管理方门户</b></div>
+        <div class="workspace-tools">
+          <label class="scope-control"><span class="control-icon">▦</span><span class="control-label">组织范围</span><select id="organization-select" aria-label="组织范围"></select><span class="select-chevron">⌄</span></label>
+          <div class="period-control" role="group" aria-label="统计周期"><button class="period-option selected" data-period="today">今日</button><button class="period-option" data-period="week">本周</button><button class="period-option" data-period="month">本月</button></div>
+        </div>
+      </div>
+
+
+      <section class="welcome-row">
+        <div><div class="eyebrow"><span class="eyebrow-dot"></span><span id="hero-eyebrow">GROUP OPERATIONS · 经营总览</span><span class="sample-badge">演示数据</span></div><h1 id="hero-title">集团经营运行总览</h1><p id="hero-description">纵观经营指标与资产运营，及时识别下属单位变化与重大风险。</p></div>
+        <button class="report-button" id="report-button"><span class="download-icon">↧</span>生成运营简报</button>
+      </section>
+
+      <section class="metric-grid" id="metric-grid" aria-label="核心指标"></section>
+
+      <section class="main-grid">
+        <article class="panel performance-panel" id="performance-panel">
+          <div class="panel-heading"><div><div class="panel-title-line"><span class="panel-accent"></span><h2 id="performance-title">分公司经营表现</h2></div><p id="performance-subtitle">关键指标完成情况 · 单位：目标完成率</p></div><button class="panel-more" data-module="经营分析">查看分析 <span>›</span></button></div>
+          <div class="performance-summary" id="performance-summary"></div>
+          <div class="chart-wrap" id="performance-chart"></div>
+          <div class="chart-footnote"><span class="legend-dot"></span><span id="chart-footnote-label">本期完成率</span><span class="footnote-right">数据截至 10:28 <span class="info-dot">i</span></span></div>
+        </article>
+
+        <article class="panel focus-panel" id="focus-panel">
+          <div class="panel-heading"><div><div class="panel-title-line"><span class="panel-accent amber"></span><h2 id="focus-title">集团重点督办</h2></div><p id="focus-subtitle">需要关注与推动的事项</p></div><button class="panel-more" data-module="重点督办">全部事项 <span>›</span></button></div>
+          <div class="focus-summary" id="focus-summary"></div>
+          <div class="focus-list" id="focus-list"></div>
+        </article>
+      </section>
+
+      <section class="lower-grid">
+        <article class="panel task-panel">
+          <div class="panel-heading task-heading"><div><div class="panel-title-line"><span class="panel-accent"></span><h2 id="task-title">我的待办</h2><span class="task-total" id="task-total">12</span></div><p id="task-subtitle">按职责聚合的待办事项</p></div><button class="panel-more" data-module="流程审批">进入待办中心 <span>›</span></button></div>
+          <div class="task-tabs" role="tablist"><button class="task-tab active" data-task-tab="待办任务" role="tab">待办任务 <span>12</span></button><button class="task-tab" data-task-tab="我发起的" role="tab">我发起的</button><button class="task-tab" data-task-tab="抄送我的" role="tab">抄送我的</button><span class="task-tabs-spacer"></span><button class="view-all" data-module="待办中心">更多 <span>›</span></button></div>
+          <div class="task-table-wrap"><table class="task-table"><thead><tr><th>任务事项</th><th>所属组织</th><th>截止时间</th><th>优先级</th><th>状态</th></tr></thead><tbody id="task-list"></tbody></table></div>
+          <div class="table-pagination"><span id="task-range">显示 1–4 项，共 12 项</span><div><button aria-label="上一页" id="page-prev">‹</button><button class="current-page" id="page-current">1</button><button aria-label="下一页" id="page-next">›</button></div></div>
+        </article>
+
+        <aside class="side-stack">
+          <article class="panel assistant-panel">
+            <div class="assistant-head"><div class="assistant-symbol">✦</div><div><h2>运营小助手</h2><small>园区经营洞察 · 实时摘要</small></div><span class="ai-live"><i></i>在线</span></div>
+            <div class="assistant-body" id="assistant-body"></div>
+            <button class="assistant-link" data-module="智慧AI运营分析">查看完整分析 <span>→</span></button>
+          </article>
+          <article class="panel notice-panel">
+            <div class="panel-heading compact-heading"><div class="panel-title-line"><span class="panel-accent teal"></span><h2>通知公告</h2><span class="new-badge">3</span></div><button class="panel-more" data-module="通知公告">更多 <span>›</span></button></div>
+            <div class="notice-list" id="notice-list"></div>
+          </article>
+        </aside>
+      </section>
+
+      <section class="bottom-grid">
+        <article class="panel apps-panel">
+          <div class="panel-heading compact-heading"><div class="panel-title-line"><span class="panel-accent purple"></span><h2>我的常用应用</h2><span class="subtle-count" id="apps-count"></span></div><button class="panel-more" data-module="应用管理">编辑应用 <span>›</span></button></div>
+          <div class="app-shortcuts" id="app-shortcuts"></div>
+        </article>
+        <article class="panel scope-note-panel">
+          <div class="scope-note-icon">⌖</div><div><h2>当前数据权限</h2><p id="scope-note">当前为集团级视角，可查看集团汇总及授权范围内的分公司、园区数据。</p></div><button class="note-help" id="permission-help" aria-label="了解数据权限">?</button>
+        </article>
+      </section>
+
+      <footer class="workspace-footer"><span>智慧园区管理平台</span><span>数据仅供界面演示 · 各模块入口为预览态</span><span>© 2026</span></footer>
+    </section>
+  </main>
+
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  <div class="modal-layer" id="modal-layer" hidden>
+    <section class="preview-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="关闭">×</button>
+      <div class="modal-mark" id="modal-mark">阅</div>
+      <span class="modal-kicker">预览态 · 示例模块</span>
+      <h2 id="modal-title">模块预览</h2>
+      <p id="modal-description">该入口用于展示角色门户中的模块访问位置。</p>
+      <div class="modal-info" id="modal-info"></div>
+      <button class="modal-confirm" id="modal-confirm">知道了</button>
+    </section>
+  </div>
+</body>
+</html>

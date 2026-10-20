@@ -1,0 +1,9 @@
+{
+  "name": "parkportal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "智慧园区三角色门户演示",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
